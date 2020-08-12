@@ -155,6 +155,7 @@ class ProjectDetail extends React.Component {
       this.setState({ isPaying: i });
 
       const accounts = await web3.eth.getAccounts();
+      // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
       const sender = accounts[0];
 
       // 检查账户
@@ -163,7 +164,7 @@ class ProjectDetail extends React.Component {
       }
 
       const contract = Project(this.props.project.address);
-      const result = await contract.methods.doPayment(i).send({ from: sender, gas: '5000000' });
+      const result = await contract.methods.doPayment(i).send({ from: sender, gas: '500000000' });
 
       window.alert('资金划转成功');
 

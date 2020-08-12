@@ -10,7 +10,7 @@ if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
 
   // 服务器环境或者没有安装 Metamask
 } else {
-  web3 = new Web3(new Web3.providers.HttpProvider(publicRuntimeConfig.infuraUrl));
+  web3 = new Web3(new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/50929eb1bcc34ac38a8c392dc9fa475c'));
 }
 
 export default web3;

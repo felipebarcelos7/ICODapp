@@ -1,4 +1,4 @@
-// 往 ProjectList 合约实例中写入示例数据
+// 往 ProjectList 合约实例写入示例数据
 const Web3 = require('web3');
 const config = require('config');
 const HDWalletProvider = require('truffle-hdwallet-provider');
@@ -6,8 +6,8 @@ const ProjectList = require('../compiled/ProjectList.json');
 const address = require('../address.json');
 
 const web3 = new Web3(new HDWalletProvider(
-    config.get('hdwallet'),
-    config.get('infuraUrl'),
+  'spy yellow senior steel chicken average deal boss ripple sausage nose bus',
+  'https://ropsten.infura.io/v3/50929eb1bcc34ac38a8c392dc9fa475c',
 ));
 const contract = new web3.eth.Contract(JSON.parse(ProjectList.interface), address);
 
@@ -17,13 +17,13 @@ const contract = new web3.eth.Contract(JSON.parse(ProjectList.interface), addres
 
   const projects = [
     {
-      description: 'Ethereum DApp Tutorial',
+      description: 'Ethereum CryptoKitty',
       minInvest: web3.utils.toWei('0.01', 'ether'),
       maxInvest: web3.utils.toWei('0.1', 'ether'),
       goal: web3.utils.toWei('1', 'ether'),
     },
     {
-      description: 'Ethereum Video Tutorial',
+      description: 'Ethereum MakerDao',
       minInvest: web3.utils.toWei('0.1', 'ether'),
       maxInvest: web3.utils.toWei('1', 'ether'),
       goal: web3.utils.toWei('5', 'ether'),

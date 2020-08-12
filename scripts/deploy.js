@@ -10,8 +10,8 @@ const { interface, bytecode } = require(contractPath);
 
 // 2. 配置 provider
 const provider = new HDWalletProvider(
-    config.get('hdwallet'),
-    config.get('infuraUrl'),
+    'spy yellow senior steel chicken average deal boss ripple sausage nose bus',
+    'https://ropsten.infura.io/v3/50929eb1bcc34ac38a8c392dc9fa475c',
 );
 
 // 3. 初始化 web3 实例
@@ -20,6 +20,8 @@ const web3 = new Web3(provider);
 (async () => {
     // 4. 获取钱包里面的账户
     const accounts = await web3.eth.getAccounts();
+    // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+    
     console.log('合约部署账户:', accounts[0]);
 
     // 5. 创建合约实例并且部署
@@ -32,7 +34,7 @@ const web3 = new Web3(provider);
     const contractAddress = result.options.address;
 
     console.log('合约部署成功:', contractAddress);
-    console.log('合约查看地址:', `https://rinkeby.etherscan.io/address/${contractAddress}`);
+    console.log('合约查看地址:', `https://ropsten.etherscan.io/address/${contractAddress}`);
 
     // 6. 合约地址写入文件系统
     const addressFile = path.resolve(__dirname, '../address.json');
